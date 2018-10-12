@@ -1,8 +1,28 @@
-# iboot
-木桶流图片布局插件
+
+![tim 20181012160547](https://user-images.githubusercontent.com/17584565/46856490-2a200780-ce39-11e8-95b1-0b7ce3031bac.png)
+
+
+<h4 align="center">
+jQuery木桶流图片布局插件 v1.0.0
+</h4>
+
+
+<h5 align="center">
+DEMO
+</h4>
+
+<div align="center">
+  <img src="https://qr.api.cli.im/qr?data=http%253A%252F%252Fshow.thisummer.com%252Fiboot%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=260&kid=cliim&key=617cab9d77816e0210ee775df7dfb6d3">
+  
+</div>
+<div align="center">
+  <a href="http://show.thisummer.com/iboot">在线演示</a>
+</div>
+
 
 ## Install
 ```html
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="./iboot.js"></script>
 ```
 
@@ -97,4 +117,7 @@ iboot.loadMore([
 ])
 ```
 
-
+## 请我喝杯咖啡，支持更多开源
+![1024.png](https://i.loli.net/2018/07/25/5b57cb91a44a1.png)
+## LICENSE
+<a href="http://opensource.org/licenses/MIT">MIT</a>
