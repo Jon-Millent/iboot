@@ -40,13 +40,13 @@ var iboot = new Iboot($('.iboot-controller'), {
 #### ele
 当前选中的元素
 #### config
-* list 
-* baseHeight 
-* template 
-* afterLoad 
-* beforeLoad 
-* resize 
-* loadMore 
+* <a href="#list">list</a> 
+* <a href="#baseHeight">baseHeight</a>  
+* <a href="#template">template</a>  
+* <a href="#afterLoad">afterLoad</a>  
+* <a href="#beforeLoad">beforeLoad</a>  
+* <a href="#resize">resize</a>  
+* <a href="#loadMore">loadMore</a>  
 
 #### list
 图片列表
@@ -77,7 +77,7 @@ template: function (dom) {
 
 #### resize
 此方法会对列表重新排版，用于窗口大小改变的时候。
-```
+```js
 $(window).resize(function () {
   iboot.resize()
 })
