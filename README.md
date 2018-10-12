@@ -58,6 +58,8 @@ var iboot = new Iboot($('.iboot-controller'), {
   }
 ]
 ```
+#### baseHeight
+基准高度，图片会再次基础上放大或缩小，默认 `400`。
 
 #### template
 模板函数，此方法允许你在渲染的时候操作dom，以完成对列表自定义的一些操作，必须返回操作后的dom。
