@@ -90,10 +90,10 @@
   }
   
   Iboot.prototype.template = function(src, alt){
-    let item = $('<div class="iboot-item" style="float: left"></div>')
+    var item = $('<div class="iboot-item" style="float: left"></div>');
     item.append(
       $('<img src="'+src+'" alt="'+alt+'" style="width: 100%;height: auto;">')
-    )
+    );
     return this.config.template(
       item
     )
@@ -102,7 +102,7 @@
   Iboot.prototype.render = function(cp, img){
     
     var _this = this
-    let dom = this.template(cp.src, cp.alt)
+    var dom = this.template(cp.src, cp.alt)
   
     var scale = img.width / img.height
     
@@ -128,7 +128,7 @@
   
     this.ele.append(dom)
   
-    let compW = this.innerData.nowItemWidth - this.ele.width()
+    var compW = this.innerData.nowItemWidth - this.ele.width()
     
     if(compW > 0) {
       
@@ -208,7 +208,7 @@
       _this.innerData.appendDoms.push(v)
       _this.innerData.nowItemWidth += cof.width
   
-      let compW = _this.innerData.nowItemWidth - _this.ele.width()
+      var compW = _this.innerData.nowItemWidth - _this.ele.width()
   
       if(compW > 0) {
   

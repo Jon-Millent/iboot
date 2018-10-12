@@ -58,7 +58,7 @@
     var iboot = new Iboot($('.iboot-controller'), {
       list: getImgList(50),
       baseHeight: 300,
-      template(dom){
+      template: function(dom){
         dom.addClass('some')
         return dom
       },
