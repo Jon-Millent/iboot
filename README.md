@@ -3,7 +3,7 @@
 
 ## Install
 ```html
-    <script src="./iboot.js"></script>
+  <script src="./iboot.js"></script>
 ```
 
 ## Use
