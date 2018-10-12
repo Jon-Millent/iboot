@@ -5,7 +5,7 @@ Iboot
 </h1>
 
 <h4 align="center">
-jQuery木桶流图片布局插件
+jQuery木桶流图片布局插件 v1.0.0
 </h4>
 
 
