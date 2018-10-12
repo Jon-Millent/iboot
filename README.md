@@ -1,9 +1,6 @@
 
 ![tim 20181012160547](https://user-images.githubusercontent.com/17584565/46856490-2a200780-ce39-11e8-95b1-0b7ce3031bac.png)
 
-<h1 align="center">
-Iboot
-</h1>
 
 <h4 align="center">
 jQuery木桶流图片布局插件 v1.0.0
