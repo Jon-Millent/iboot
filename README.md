@@ -7,6 +7,7 @@ jQuery木桶流图片布局插件 v1.0.0
 </h4>
 
 
+
 <h5 align="center">
 DEMO
 </h4>
@@ -15,10 +16,15 @@ DEMO
   <img src="https://qr.api.cli.im/qr?data=http%253A%252F%252Fshow.thisummer.com%252Fiboot%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=260&kid=cliim&key=617cab9d77816e0210ee775df7dfb6d3">
   
 </div>
+
 <div align="center">
   <a href="http://show.thisummer.com/iboot">在线演示</a>
-</div>
+</div>  
 
+
+## 原理
+
+![](https://user-gold-cdn.xitu.io/2018/10/12/166675fe71c0aadd?w=1152&h=648&f=gif&s=48735)
 
 ## Install
 ```html
