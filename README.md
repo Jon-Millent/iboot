@@ -41,12 +41,12 @@ var iboot = new Iboot($('.iboot-controller'), {
 当前选中的元素
 #### config
 * <a href="#list">list</a> 
-* <a href="#baseHeight">baseHeight</a>  
+* <a href="#baseheight">baseHeight</a>  
 * <a href="#template">template</a>  
-* <a href="#afterLoad">afterLoad</a>  
-* <a href="#beforeLoad">beforeLoad</a>  
+* <a href="#afterload">afterLoad</a>  
+* <a href="#beforeload">beforeLoad</a>  
 * <a href="#resize">resize</a>  
-* <a href="#loadMore">loadMore</a>  
+* <a href="#loadmore">loadMore</a>  
 
 #### list
 图片列表
