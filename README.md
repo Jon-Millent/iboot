@@ -1,8 +1,30 @@
-# iboot
-木桶流图片布局插件
+
+
+<h1 align="center">
+Iboot
+</h1>
+
+<h4 align="center">
+jQuery木桶流图片布局插件
+</h4>
+
+
+<h5 align="center">
+DEMO
+</h4>
+
+<div align="center">
+  <img src="https://qr.api.cli.im/qr?data=http%253A%252F%252Fshow.thisummer.com%252Fiboot&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=22999c679b90305351c44aff4cf5456c">
+  
+</div>
+<div align="center">
+  <a href="http://show.thisummer.com/iboot">在线演示</a>
+</div>
+
 
 ## Install
 ```html
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="./iboot.js"></script>
 ```
 
