@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style>
     .iboot-item {
-      /*transition: all .4s ease;*/
+      transition: all .4s ease;
     }
     html, body{
       padding: 0;
@@ -18,6 +18,13 @@
       display: block;
       clear: both;
       width: 100%;
+    }
+    button {
+      width: 60%;
+      height: 40px;
+      display: block;
+
+      margin: 10px auto;
     }
   </style>
 </head>
@@ -68,7 +75,7 @@
     })
 
     $('#loadmore').click(function () {
-      iboot.loadMore(getImgList(10))
+      iboot.loadMore(getImgList(50))
     })
   })
 </script>
