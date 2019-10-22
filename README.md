@@ -13,12 +13,12 @@ DEMO
 </h4>
 
 <div align="center">
-  <img src="https://qr.api.cli.im/qr?data=http%253A%252F%252Fshow.thisummer.com%252Fiboot%252F&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=260&kid=cliim&key=617cab9d77816e0210ee775df7dfb6d3">
+  <img src="https://i.loli.net/2019/10/22/7FPIfsKTwqiY3MR.png">
   
 </div>
 
 <div align="center">
-  <a href="http://show.thisummer.com/iboot">在线演示</a>
+  <a href="http://show.verydog.cn/iboot">在线演示</a>
 </div>  
 
 
