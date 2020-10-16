@@ -34,8 +34,12 @@
   }
 
   var iboot = new Iboot(document.getElementById('box'),  {
-    list: getImgList(10),
+    list: getImgList(7),
     baseHeight: 300,
+  })
+
+  document.getElementById('loadmore').addEventListener('click', function () {
+    iboot.loadMore(getImgList(7))
   })
 </script>
 </html>

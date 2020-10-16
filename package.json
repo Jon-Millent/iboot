@@ -4,7 +4,8 @@
   "description": "",
   "main": "./dist/rem-help.min.js",
   "scripts": {
-    "build": "webpack --config ./build/webpack.prod.js --progress"
+    "build": "webpack --config ./build/webpack.prod.js --progress",
+    "dev": "webpack --config ./build/webpack.dev.js --progress"
   },
   "repository": {
     "type": "git",

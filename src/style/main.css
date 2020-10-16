@@ -1,6 +1,12 @@
+.iboot-box:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+}
 .iboot-item {
-    display: inline-block;
     position: relative;
+    float: left;
 }
 .iboot-item img {
     width: 100%;
