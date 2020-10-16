@@ -1,0 +1,8 @@
+.iboot-item {
+    display: inline-block;
+    position: relative;
+}
+.iboot-item img {
+    width: 100%;
+    height: 100%;
+}

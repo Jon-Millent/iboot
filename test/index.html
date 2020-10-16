@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <div class="my-box" id="box">
+
+  </div>
+
+  <button id="loadmore">加载更多</button>
+</body>
+<script src="../dist/iboot.min.js"></script>
+<script>
+  function Srr(lowValue,highValue){
+    var choice=highValue-lowValue+1;
+    return Math.floor(Math.random()*choice+lowValue);
+  }
+
+  function getImgList(len) {
+    var random = []
+    for(var i=0; i<len; i++) {
+      random.push({
+        src: 'https://picsum.photos/' + Srr(100, 300) + '/' + Srr(100, 300)
+      })
+    }
+    return random
+  }
+
+  var iboot = new Iboot(document.getElementById('box'),  {
+    list: getImgList(10),
+    baseHeight: 300,
+  })
+</script>
+</html>

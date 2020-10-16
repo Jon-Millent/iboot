@@ -29,7 +29,7 @@ DEMO
 ## Install
 ```html
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./iboot.js"></script>
+  <script src="./iboot-old.js"></script>
 ```
 
 ## Use
