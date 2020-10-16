@@ -1,0 +1,30 @@
+{
+  "name": "iboot",
+  "version": "2.1.0",
+  "description": "",
+  "main": "./dist/rem-help.min.js",
+  "scripts": {
+    "build": "webpack --config ./build/webpack.prod.js --progress",
+    "dev": "webpack --config ./build/webpack.dev.js --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon-Millent/iboot.git"
+  },
+  "author": "jon-millent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jon-Millent/iboot/issues"
+  },
+  "homepage": "https://github.com/Jon-Millent/iboot#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.1.2",
+    "webpack-cli": "^4.0.0"
+  }
+}
