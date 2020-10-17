@@ -5,7 +5,9 @@
   <title>Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style>
-
+    body {
+      overflow: scroll;
+    }
   </style>
 </head>
 <body>
@@ -32,6 +34,17 @@
     }
     return random
   }
+
+  let firstRoom = getImgList(7)
+
+  firstRoom.push({
+    type: 'block',
+    width: 300,
+    height: 80,
+    render(ele) {
+
+    }
+  })
 
   var iboot = new Iboot(document.getElementById('box'),  {
     list: getImgList(7),

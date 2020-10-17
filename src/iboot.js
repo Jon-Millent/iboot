@@ -9,7 +9,7 @@ class Iboot {
       render: this.renderSlop,
       lazy: false,
       resize: false,
-      hideHeight: 600,
+      hideHeight: 300,
       resizeTime: 100
     }, config)
     this.ele = ele
@@ -78,10 +78,6 @@ class Iboot {
     this.memeorySave.status.loading = true
     await this.layoutList(this.memeorySave.list, 'img')
     this.memeorySave.list = this.memeorySave.list.filter(item2=>!item2.loaded)
-    console.log(
-      this.memeorySave.list,
-      'this.memeorySave.list'
-    )
     this.memeorySave.status.loading = false
   }
 
@@ -105,7 +101,7 @@ class Iboot {
 
       if(dlItem.isSuccess) {
 
-        let resize = this.scaleImageByHeight(dlItem, this.config.baseHeight)
+        let resize = dlItem.scaleImageByHeight(this.config.baseHeight)
 
         if(mode === 'img') {
           this.memeorySave.loaded.push(dlItem)
@@ -164,8 +160,6 @@ class Iboot {
       width = this.memeorySave.nowCacheWidth
     }
 
-    console.log(width, mode, 'this.memeorySave.nowLoadWidth')
-
     let bi = width / this.config.baseHeight
     let targetHeight = this.eleInfo.width / bi
 
@@ -181,23 +175,29 @@ class Iboot {
       // })
 
       list.forEach(item=> {
-        this.appendChild(this.render({
-          width: this.scaleImageByHeight(item, targetHeight).width,
+        item.element = this.render({
+          width: this.scaleWidthByPercentage(
+            this.scaleImageByHeight(item, targetHeight).width
+          ),
           height: targetHeight,
           src: item.src,
           display: targetHeight >= this.config.hideHeight ? 'none' : 'block'
-        }))
+        })
+        this.appendChild(item.element)
       })
 
     } else if(mode === 'cache') {
       list.forEach(item=> {
-        item.element.style.width = this.scaleImageByHeight(item, targetHeight).width + 'px'
+        item.element.style.width = this.scaleWidthByPercentage(
+          this.scaleImageByHeight(item, targetHeight).width
+        )
         item.element.style.height = targetHeight  + 'px'
         if(targetHeight >= this.config.hideHeight) {
           item.element.style.display = 'none'
         } else {
           item.element.style.display = 'block'
         }
+        console.log(item.element.style, 'item.element.style')
       })
     }
   }
@@ -215,6 +215,12 @@ class Iboot {
     }
   }
 
+  scaleWidthByPercentage(Width) {
+    // let fl = parseInt(Width)
+    // console.log(fl, this.eleInfo.width, '<------------')
+    return (Width / this.eleInfo.width) * 100 + '%'
+  }
+
   renderSlop(dom) {
     return dom
   }
@@ -223,7 +229,7 @@ class Iboot {
     let div = document.createElement('div')
     div.className = 'iboot-item'
     div.style.height = item.height + 'px'
-    div.style.width = item.width + 'px'
+    div.style.width = item.width
     div.style.display = item.display
 
     div.innerHTML = `<img class="iboot-img" src="${item.src}" alt="${item.alt}">`
@@ -266,37 +272,7 @@ class Iboot {
   }
 
   reLayoutElements() {
-    let children = this.ibootParent.children
-    let list = []
-
-    for(let index=0; index<children.length; index++) {
-      let item = children[index]
-
-      let imgNode = null
-      let findItem = item.getElementsByTagName('img')
-      if(!findItem || findItem.length === 0) {
-        break
-      } else {
-        for(let j=0; j<findItem.length; j++) {
-          let jItem = findItem[j]
-          if(jItem.className.indexOf('iboot-img') !== -1) {
-            imgNode = jItem
-            break
-          }
-        }
-      }
-
-      if(!imgNode) {
-        break
-      }
-
-      list.push(new IbootImage({
-        width: imgNode.width,
-        height: imgNode.height,
-        element: item
-      }))
-    }
-    this.layoutList(list, 'cache')
+    this.layoutList(this.memeorySave.loaded, 'cache')
   }
 
   // 销毁
