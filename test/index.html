@@ -49,6 +49,10 @@
   var iboot = new Iboot(document.getElementById('box'),  {
     list: firstRoom,
     baseHeight: 300,
+    render(item) {
+      item.className += ' some'
+      return item
+    }
   })
 
   document.getElementById('loadmore').addEventListener('click', function () {

@@ -8,11 +8,11 @@ barrel image stream layout
 
 ![version](https://img.shields.io/github/package-json/v/jon-millent/iboot.svg)
 
-#### How it work？
+#### 它的工作原理？
 
 ![](https://user-gold-cdn.xitu.io/2018/10/12/166675fe71c0aadd?w=1152&h=648&f=gif&s=48735)
 
-## Install
+## 安装
 ```shell script
 npm install iboot-layout
 ```
@@ -25,7 +25,7 @@ or
 <script src="https://cdn.jsdelivr.net/npm/iboot-layout@2.1.0/dist/iboot.min.js"></script>
 ```
 
-## Use
+## 使用
 ```javascript
 import Iboot from 'iboot-layout'
 let photos = new Iboot(document.getElementById('box'),  {
@@ -59,30 +59,30 @@ new Iboot(element,  config = {
 })
 ```
 ### element
-pass in the initialized dom element
+传入初始化的dom元素
 ```javascript
 new Iboot(document.getElementById('xxx'))
 ```
 
 ### config
 ##### config.list
-the rendered image array.
+渲染的图片数组。
 
 ```javascript
 config.list = [
-  // normal image
+  // 普通图片
   { 
-    src: 'http://xxxx', // address
-    alt: 'my-photo' // image alt
+    src: 'http://xxxx', // 图片地址
+    alt: 'my-photo' // 图片备注
   },
   
-  // special placeholder
+  // 特殊占位
   { 
-    type: 'block', // type：block
-    width: 300, // width
-    height: 80, // height
-    render(ele) { // render function
-      // @ele parent element
+    type: 'block', // 类型：block
+    width: 300, // 宽度
+    height: 80, // 高度
+    render(ele) { // 渲染函数
+      // @ele 渲染的父元素
       ele.innerHTML = '<span>show</span>'
     }
   } 
@@ -90,56 +90,53 @@ config.list = [
 ```
 
 ##### config.baseHeight
-`default: 300`  
-the base height of the picture, all picture zooming are based on this base height.
+`默认：300`  
+图片基准高度，所有的图片缩放都基于这个基准高度。
 
 ##### config.render
-allow users to override the render method and customize each rendering list. The render method needs to return a custom element
+允许用户重写render方法，对每一个渲染列表进行自定义。render方法需要返回自定义好的element
 ```javascript
 config.render = function(element, item) {
-  // @element currently rendered element
-  // @item current item information
+  // @element 当前渲染的element
+  // @item 当前item的信息
   
-  // eg
+  // 例子
   item.className += ' some'
   return item
 }
 ```
 
 #### config.resize
-`default: true`  
-whether to re-render the arrangement according to the zoom of the browser window.
+`默认：true`  
+是否根据浏览器窗口缩放重新渲染排列。
 
 #### config.hideHeight
-`default: 300`  
-when rendering, if the target height zoom ratio exceeds this number, it will be hidden.
+`默认：300`  
+当渲染的时候，如果目标高度缩放比例超出这个数字就会隐藏。
 
 #### config.resizeTime
-`default: 100`  
-configure the frequent call interval when the browser window is changed, the unit is `ms`.
+`默认：100`  
+配置当浏览器窗口改变的时候频繁调用间隔，单位`ms`。
 
 ### methods
-instance method
+实例方法
 
 #### Iboot.resize
-arrange again
-
+重新布局
 ```javascript
 let photo = new Iboot(...)
 photo.resize()
 ```
 
 #### Iboot.loadMore
-load more
-
+加载更多
 ```javascript
 let photo = new Iboot(...)
 photo.loadMore(@config.list)
 ```
 
 #### Iboot.destroy
-destroy the instance
-
+销毁实例
 ```javascript
 let photo = new Iboot(...)
 photo.destroy()

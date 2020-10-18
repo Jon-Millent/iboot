@@ -7,7 +7,7 @@ class Iboot {
       list: [],
       baseHeight: 400,
       render: this.renderSlop,
-      resize: false,
+      resize: true,
       hideHeight: 300,
       resizeTime: 100
     }, config)
@@ -241,7 +241,7 @@ class Iboot {
       div.innerHTML = `<img class="iboot-img" src="${item.src}" alt="${item.alt}">`
     }
 
-    return div
+    return this.config.render(div, item)
   }
 
   // 加载更多
@@ -259,7 +259,9 @@ class Iboot {
   afterLoad(){}
 
   bindEvent() {
-    window.addEventListener('resize', this.eventSave.resize = this.resize.bind(this))
+    if(this.config.resize) {
+      window.addEventListener('resize', this.eventSave.resize = this.resize.bind(this))
+    }
   }
   unBindEvent() {
     window.removeEventListener('resize', this.eventSave.resize)

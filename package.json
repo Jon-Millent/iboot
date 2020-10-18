@@ -1,8 +1,8 @@
 {
-  "name": "iboot",
+  "name": "iboot-layout",
   "version": "2.1.0",
   "description": "",
-  "main": "./dist/rem-help.min.js",
+  "main": "./dist/iboot.min.js",
   "scripts": {
     "build": "webpack --config ./build/webpack.prod.js --progress",
     "dev": "webpack --config ./build/webpack.dev.js --progress",
