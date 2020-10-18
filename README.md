@@ -10,11 +10,11 @@
 
 ## Install
 ```shell script
-npm install iboot
+npm install iboot-layout
 ```
 or
 ```shell script
-yarn add iboot
+yarn add iboot-layout
 ```
 
 ## Use

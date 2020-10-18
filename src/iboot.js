@@ -1,5 +1,5 @@
 import ImageLoader from "./util/ImageLoader";
-import IbootImage from "./util/IbootImage";
+import BlockLoader from "./util/BlockLoader";
 
 class Iboot {
   constructor(ele, config = {}) {
@@ -7,7 +7,6 @@ class Iboot {
       list: [],
       baseHeight: 400,
       render: this.renderSlop,
-      lazy: false,
       resize: false,
       hideHeight: 300,
       resizeTime: 100
@@ -68,7 +67,11 @@ class Iboot {
     this.config.list.forEach(item=> {
       this.memeorySave.list.push({
         src: item.src,
-        alt: item.alt
+        alt: item.alt,
+        type: item.type,
+        width: item.width,
+        height: item.height,
+        render: item.render
       })
     })
   }
@@ -82,6 +85,7 @@ class Iboot {
   }
 
   async layoutList(renderList, mode = 'img', done = function (){}) {
+
     let renderedList = []
 
     let index = 0
@@ -89,7 +93,11 @@ class Iboot {
     while (repeatItem) {
       let dlItem = null
       if(mode === 'img') {
-        dlItem = await ImageLoader(repeatItem.src)
+        if(repeatItem.type === 'block') {
+          dlItem = BlockLoader(repeatItem)
+        } else {
+          dlItem = await ImageLoader(repeatItem.src)
+        }
       } else if(mode === 'cache') {
         dlItem = renderList[index]
       } else {
@@ -102,10 +110,6 @@ class Iboot {
       if(dlItem.isSuccess) {
 
         let resize = dlItem.scaleImageByHeight(this.config.baseHeight)
-
-        if(mode === 'img') {
-          this.memeorySave.loaded.push(dlItem)
-        }
 
         renderedList.push(dlItem)
 
@@ -125,7 +129,6 @@ class Iboot {
               this.memeorySave.nowLoadWidth = 0
             }
           }
-
         } else if(mode === 'cache') {
           this.memeorySave.nowCacheWidth += resize.width
           // 到临界点去渲染
@@ -181,8 +184,11 @@ class Iboot {
           ),
           height: targetHeight,
           src: item.src,
-          display: targetHeight >= this.config.hideHeight ? 'none' : 'block'
+          display: targetHeight >= this.config.hideHeight ? 'none' : 'block',
+          render: item.render,
+          type: item.type
         })
+        this.memeorySave.loaded.push(item)
         this.appendChild(item.element)
       })
 
@@ -197,7 +203,6 @@ class Iboot {
         } else {
           item.element.style.display = 'block'
         }
-        console.log(item.element.style, 'item.element.style')
       })
     }
   }
@@ -216,8 +221,6 @@ class Iboot {
   }
 
   scaleWidthByPercentage(Width) {
-    // let fl = parseInt(Width)
-    // console.log(fl, this.eleInfo.width, '<------------')
     return (Width / this.eleInfo.width) * 100 + '%'
   }
 
@@ -232,7 +235,11 @@ class Iboot {
     div.style.width = item.width
     div.style.display = item.display
 
-    div.innerHTML = `<img class="iboot-img" src="${item.src}" alt="${item.alt}">`
+    if(item.type === 'block') {
+      item.render && item.render(div)
+    } else {
+      div.innerHTML = `<img class="iboot-img" src="${item.src}" alt="${item.alt}">`
+    }
 
     return div
   }
@@ -259,6 +266,9 @@ class Iboot {
   }
 
   resize(needLayout = true) {
+    if(this.eleInfo.width === this.ele.offsetWidth) {
+      return
+    }
     this.eleInfo.width = this.ele.offsetWidth
     this.eleInfo.height = this.ele.offsetHeight
 

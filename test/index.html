@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -42,12 +42,12 @@
     width: 300,
     height: 80,
     render(ele) {
-
+      ele.innerHTML = '<span>show</span>'
     }
   })
 
   var iboot = new Iboot(document.getElementById('box'),  {
-    list: getImgList(7),
+    list: firstRoom,
     baseHeight: 300,
   })
 
