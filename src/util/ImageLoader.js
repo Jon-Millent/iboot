@@ -9,7 +9,7 @@ export default async function (src) {
         img,
         width: img.width,
         height: img.height,
-        src
+        src,
       }))
     }
     img.onerror = function () {

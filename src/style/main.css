@@ -8,7 +8,7 @@
     position: relative;
     float: left;
 }
-.iboot-item img {
+.iboot-item .iboot-img {
     width: 100%;
     height: 100%;
 }
